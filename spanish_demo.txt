@@ -1,2 +1,2 @@
-Este mensaje es un simple demo para verificar que nuestra función está funcionando correctamente.
+Este mensaje es un simple demo para verificar que nuestra funcion  funciona correctamente.
 Boca Juniors es el mejor equipo de futbol del planeta.
