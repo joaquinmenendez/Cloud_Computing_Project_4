@@ -16,3 +16,7 @@ export EXPORT_BUCKET_NAME=[]
 gsutil mb -p $PROJECT_ID -b on gs://$INPUT_BUCKET_NAME/
 
 gsutil mb -p $PROJECT_ID -b on gs://$EXPORT_BUCKET_NAME/
+
+
+requirements.txt
+goocle-cloud-storage
