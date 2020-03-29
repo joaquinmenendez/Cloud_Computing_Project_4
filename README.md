@@ -13,6 +13,6 @@ export INPUT_BUCKET_NAME=[]
 export EXPORT_BUCKET_NAME=[]
 ```
 
-gsutil mb -p $PROJECT_ID -l US-EAST1 on gs://$INPUT_BUCKET_NAME/
+gsutil mb -p $PROJECT_ID -b on gs://$INPUT_BUCKET_NAME/
 
-gsutil mb -p $PROJECT_ID -l US-EAST1 on gs://$EXPORT_BUCKET_NAME/
+gsutil mb -p $PROJECT_ID -b on gs://$EXPORT_BUCKET_NAME/
