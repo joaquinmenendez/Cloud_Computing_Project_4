@@ -13,7 +13,7 @@ def InputToOutput(event, context):
 
     # writing in the output bucket
     bucket_out = client.get_bucket('output_serverless')  # name of the bucket where I am going to save my files
-    blob_out = bucket_out.blob(f'{event["name"][:-4]}_to_english.txt')  # removing the .txt  to the original file
+    blob_out = bucket_out.blob(f'{event["name"][:-4]}_SA.txt')  # removing the .txt  to the original file
     inform = sample_analyze_sentiment(f'gs://input_serverless/{event["name"]}')
     inform = inform + f'\nOriginal text:\n{blob.download_as_string()}\n'
     blob_out.upload_from_string(inform)
