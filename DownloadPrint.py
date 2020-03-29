@@ -47,7 +47,7 @@ def DownloadPrint(request):
             file = urllib.request.urlopen(request_json['url'])
             file = file.read()
             inform = sample_analyze_sentiment(file)
-            inform = inform + f'Original text:\n{file}\n---'
+            inform = inform + f'\nOriginal text:\n{file}\n'
             return inform
         except:
             return 'Reading URL failed. Please check the URL.'
