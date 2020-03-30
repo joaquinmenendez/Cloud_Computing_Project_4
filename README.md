@@ -8,8 +8,8 @@ This is a tutorial of how to use Google Cloud Services to develop a Serverless D
 [Continuous Delivery of Flask Application on GCP](https://github.com/joaquinmenendez/Cloud_Computing_Project_1)<br>
 
 ### Steps
-1) Create a new project on GCS<br>
-2) Clone this repository if you want to use the sames scripts and demo files<br>
+**1)** Create a new project on GCS<br>
+**2)** Clone this repository if you want to use the sames scripts and demo files<br>
 ```bash
 #HTTP
 git clone https://github.com/joaquinmenendez/Cloud_Computing_Project_4.git
@@ -29,21 +29,33 @@ This function takes an POST request with the format `{"url":"[A link to .txt fil
 - Language of the text
 - Original text
 
-3) Go to Console/Cloud Functions a click on 'CREATE FUNCTION'
+**3)** Enable APIs
+
+**4)** Go to Console/Cloud Functions a click on 'CREATE FUNCTION'
 ![Cloud Function](https://user-images.githubusercontent.com/43391630/77852144-f9f23300-71aa-11ea-936b-9c811145e740.png) <!-- .element height="50%" width="50%" -->
 
-4) [DonloadPrint](https://user-images.githubusercontent.com/43391630/77869995-40c54480-720e-11ea-8211-97903d5d37dc.png) <!-- .element height="50%" width="50%" -->
+**5)** Example of `DownloadPrint`
+![DonloadPrint](https://user-images.githubusercontent.com/43391630/77869995-40c54480-720e-11ea-8211-97903d5d37dc.png) <!-- .element height="50%" width="50%" -->
 
-On MAIN.PY 
+On **MAIN.PY** copy and paste the content from `DownloadPrint.py`.<br>
+**REQUIREMENTS.TXT** should look like this:<br>
+```python
+# Function dependencies, for example:
+# package>=version
+google-cloud-language
+```
+Once we complete all we click on 'DEPLOY'.
 
+**6**) Testing `DownloadPrint`<br>
+After the Function has been deployed we could test if is working correctly. In this case I will test the function with the following request
 ```bash
 {"url" : "https://raw.githubusercontent.com/joaquinmenendez/Cloud_Computing_Project_4/master/spanish_demo.txt"}
 ```
+*Example of how it should look*
+![Testing DownloadPrint](https://user-images.githubusercontent.com/43391630/77870494-8fbfa980-720f-11ea-8c96-9d52cf6b228c.png)
 
-```bash
-requirements.txt
-google-cloud-language
-```
+
+
 
 
 ```bash
