@@ -37,6 +37,8 @@ This function takes an POST request with the format `{"url":"[A link to .txt fil
 **2)** Example of `DownloadPrint`
 ![DonloadPrint](https://user-images.githubusercontent.com/43391630/77869995-40c54480-720e-11ea-8211-97903d5d37dc.png) <!-- .element height="50%" width="50%" -->
 
+It is important to check the box that says *Allow unaunthenticated invocations* if we want to use this function externally.
+
 On **MAIN.PY** copy and paste the content from `DownloadPrint.py`.<br>
 **REQUIREMENTS.TXT** should look like this:<br>
 ```python
@@ -54,21 +56,23 @@ After the Function has been deployed we could test if is working correctly. In t
 *Example of how it should look*
 ![Testing DownloadPrint](https://user-images.githubusercontent.com/43391630/77870494-8fbfa980-720f-11ea-8c96-9d52cf6b228c.png)<!-- .element height="50%" width="50%" -->
 
-**4)** Using `DowloadPrint` in a API-like way.
+**4)** Using `DowloadPrint` in a API-like way. To check the function is properly working open your local terminal (not the CloudShell) and type:
 
 ```bash
+export YOUR_PROJECT_URL = `Your project url`
 curl -H "Content-Type: application/json" -X POST -d '
-{"url" : "https://raw.githubusercontent.com/joaquinmenendez/Cloud_Computing_Project_4/master/spanish_demo.txt"}' https://us-central1-project3-serverless.cloudfunctions.net/DownloadPrint
+{"url" : "https://raw.githubusercontent.com/joaquinmenendez/Cloud_Computing_Project_4/master/spanish_demo.txt"}' $YOUR_PROJECT_URL
 ```
+(You can find the URL of the function if you click in EDIT)
 
-### InputToOutput
+## InputToOutput
 
 **1)** We should start creating the buckets where we are going to dump the .txt files and the output of our analysis.
 
 ```bash
-export PROJECT_ID=[]
-export INPUT_BUCKET_NAME=[]
-export EXPORT_BUCKET_NAME=[]
+export PROJECT_ID=`Your project id`
+export INPUT_BUCKET_NAME=input_serverless
+export EXPORT_BUCKET_NAME=output_serverless
 #Input
 gsutil mb -p $PROJECT_ID -b on gs://$INPUT_BUCKET_NAME/
 #Output
@@ -79,6 +83,7 @@ gsutil mb -p $PROJECT_ID -b on gs://$EXPORT_BUCKET_NAME/
 ![Example storage](https://user-images.githubusercontent.com/43391630/77868878-add6db00-720a-11ea-902f-a9c3ae40dd19.png)<!-- .element height="50%" width="50%" -->
 
 **2)** Example of `InputToOutput`<br>
+
 ![Example InputToOutput](https://user-images.githubusercontent.com/43391630/77871323-c696bf00-7211-11ea-958c-ef690e31577a.png)<!-- .element height="50%" width="50%" -->
 
 On **MAIN.PY** copy and paste the content from `InputToOutput.py`.<br>
@@ -88,6 +93,8 @@ requirements.txt
 goocle-cloud-storage
 google-cloud-language
 ```
-3) Once the function has been deployed we could test it by uploading a file into the `input_serverless` bucket.
+
+3) Once the function has been deployed we could test it by uploading a file into the `input_serverless` bucket.<br>
+
 ![Upload file to input_serverless](https://user-images.githubusercontent.com/43391630/77871518-62c0c600-7212-11ea-8d5e-66f7492d808b.png)<!-- .element height="50%" width="50%" -->
 
