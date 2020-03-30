@@ -1,7 +1,7 @@
 # Using Google Cloud Services to develop a Serverless Data Engineering Pipeline
 ## Data Analysis in the Cloud at Scale (ECE 590.24) - Project 4
 
-This is a tutorial of how to use Google Cloud Services to develop a Serverless Data Engineering Pipeline.<br> You can see a quick demostration [here](https://youtu.be/4PwVkW0_wB8).
+This is a tutorial of how to use Google Cloud Services to develop a Serverless Data Engineering Pipeline.<br> You can see a video demostration [here](https://youtu.be/4PwVkW0_wB8).
 
 **Previous projects**<br>
 [Docker containerization](https://github.com/joaquinmenendez/Cloud_Computing_Project_2)<br>
@@ -19,11 +19,11 @@ git clone git@github.com:joaquinmenendez/Cloud_Computing_Project_4.git
 
 In this tutorial I will be using 2 different Cloud Functions.<br>
 `DownloadPrint` Accepts a POST request without the need to be in the GCS enviroment. In other words, other user could use this function in an API-like way. <br>
-`InputToOutput` This function is trigger when a file is added into a bucket (`input_serverless`). The Cloud Function read this file (PLAIN TEXT), performs a Sentiment Analysis and save the output into a different bucket (`output_serverless`). I choose to do this despite the fact that storing the output into a Database is a better practice. This could be modified. Feel free to use this only as an example.<br>
+`InputToOutput` This function is trigger when a file is added into a bucket (`input_serverless`). The Cloud Function read this file (PLAIN TEXT), performs a Sentiment Analysis and save the output into a different bucket (`output_serverless`). I choose to do this despite the fact that storing the output into a Database is a better practice. This could be modified.<br> Feel free to use this only as an example.<br>
 
 **3)** Enable APIs:<br>
-- Cloud Functions API
-- Cloud Natural Language API
+- Cloud Functions API<br>
+- Cloud Natural Language API<br>
 *It could be that other APIs should be enabled to run these functions. In case you experience some error check if other API should be enabled*
 
 ### DownloadPrint
