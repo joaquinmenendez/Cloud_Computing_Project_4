@@ -72,11 +72,11 @@ curl -H "Content-Type: application/json" -X POST -d '
 ```bash
 export PROJECT_ID=`Your project id`
 export INPUT_BUCKET_NAME=input_serverless
-export EXPORT_BUCKET_NAME=output_serverless
+export OUTPUT_BUCKET_NAME=output_serverless
 #Input
 gsutil mb -p $PROJECT_ID -b on gs://$INPUT_BUCKET_NAME/
 #Output
-gsutil mb -p $PROJECT_ID -b on gs://$EXPORT_BUCKET_NAME/
+gsutil mb -p $PROJECT_ID -b on gs://$OUTPUT_BUCKET_NAME/
 ```
 
 *An example of how it should look*
