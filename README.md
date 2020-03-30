@@ -21,7 +21,10 @@ In this tutorial I will be using 2 different Cloud Functions.<br>
 `DownloadPrint` Accepts a POST request without the need to be in the GCS enviroment. In other words, other user could use this function in an API-like way. <br>
 `InputToOutput` This function is trigger when a file is added into a bucket (`input_serverless`). The Cloud Function read this file (PLAIN TEXT), performs a Sentiment Analysis and save the output into a different bucket (`output_serverless`). I choose to do this despite the fact that storing the output into a Database is a better practice. This could be modified. Feel free to use this only as an example.<br>
 
-**3)** Enable APIs
+**3)** Enable APIs:<br>
+- Cloud Functions API
+- Cloud Natural Language API
+*It could be that other APIs should be enabled to run these functions. In case you experience some error check if other API should be enabled*
 
 ### DownloadPrint
 
