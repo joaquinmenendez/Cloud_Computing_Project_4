@@ -95,7 +95,7 @@ google-cloud-language
 google-cloud-storage
 ```
 
-3) Once the function has been deployed we could test it by uploading a file into the `input_serverless` bucket.<br>
+**3)** Once the function has been deployed we could test it by uploading a file into the `input_serverless` bucket.<br>
 
 ![Upload file to input_serverless](https://user-images.githubusercontent.com/43391630/77871518-62c0c600-7212-11ea-8d5e-66f7492d808b.png)<!-- .element height="50%" width="50%" -->
 
