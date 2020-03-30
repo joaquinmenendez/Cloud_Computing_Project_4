@@ -7,7 +7,7 @@ This is a tutorial of how to use Google Cloud Services to develop a Serverless D
 [Docker containerization](https://github.com/joaquinmenendez/Cloud_Computing_Project_2)<br>
 [Continuous Delivery of Flask Application on GCP](https://github.com/joaquinmenendez/Cloud_Computing_Project_1)<br>
 
-### Steps
+### General steps
 **1)** Create a new project on GCS<br>
 **2)** Clone this repository if you want to use the sames scripts and demo files<br>
 ```bash
@@ -31,10 +31,10 @@ This function takes an POST request with the format `{"url":"[A link to .txt fil
 - Language of the text
 - Original text
 
-**4)** Go to Console/Cloud Functions a click on 'CREATE FUNCTION'
+**1)** Go to Console/Cloud Functions a click on 'CREATE FUNCTION'
 ![Cloud Function](https://user-images.githubusercontent.com/43391630/77852144-f9f23300-71aa-11ea-936b-9c811145e740.png) <!-- .element height="50%" width="50%" -->
 
-**5)** Example of `DownloadPrint`
+**2)** Example of `DownloadPrint`
 ![DonloadPrint](https://user-images.githubusercontent.com/43391630/77869995-40c54480-720e-11ea-8211-97903d5d37dc.png) <!-- .element height="50%" width="50%" -->
 
 On **MAIN.PY** copy and paste the content from `DownloadPrint.py`.<br>
@@ -46,15 +46,15 @@ google-cloud-language
 ```
 Once we complete all we click on 'DEPLOY'.
 
-**6**) Testing `DownloadPrint`<br>
+**3**) Testing `DownloadPrint`<br>
 After the Function has been deployed we could test if is working correctly. In this case I will test the function with the following request
 ```bash
-{"url" : "https://raw.githubusercontent.com/joaquinmenendez/Cloud_Computing_Project_4/master/spanish_demo.txt"}<!-- .element height="50%" width="50%" -->
+{"url" : "https://raw.githubusercontent.com/joaquinmenendez/Cloud_Computing_Project_4/master/spanish_demo.txt"}
 ```
 *Example of how it should look*
 ![Testing DownloadPrint](https://user-images.githubusercontent.com/43391630/77870494-8fbfa980-720f-11ea-8c96-9d52cf6b228c.png)<!-- .element height="50%" width="50%" -->
 
-**7)** Using `DowloadPrint` in a API-like way.
+**4)** Using `DowloadPrint` in a API-like way.
 
 ```bash
 curl -H "Content-Type: application/json" -X POST -d '
@@ -63,7 +63,7 @@ curl -H "Content-Type: application/json" -X POST -d '
 
 ### InputToOutput
 
-We should start creating the buckets where we are going to dump the .txt files and the output of our analysis.
+**1)** We should start creating the buckets where we are going to dump the .txt files and the output of our analysis.
 
 ```bash
 export PROJECT_ID=[]
@@ -78,6 +78,9 @@ gsutil mb -p $PROJECT_ID -b on gs://$EXPORT_BUCKET_NAME/
 *An example of how it should look*
 ![Example storage](https://user-images.githubusercontent.com/43391630/77868878-add6db00-720a-11ea-902f-a9c3ae40dd19.png)<!-- .element height="50%" width="50%" -->
 
+**2)** Example of `InputToOutput`<br>
+![Example InputToOutput](https://user-images.githubusercontent.com/43391630/77871323-c696bf00-7211-11ea-958c-ef690e31577a.png)<!-- .element height="50%" width="50%" -->
+
 On **MAIN.PY** copy and paste the content from `InputToOutput.py`.<br>
 **REQUIREMENTS.TXT** should look like this:<br>
 ```bash
@@ -85,5 +88,6 @@ requirements.txt
 goocle-cloud-storage
 google-cloud-language
 ```
-
+3) Once the function has been deployed we could test it by uploading a file into the `input_serverless` bucket.
+![Upload file to input_serverless](https://user-images.githubusercontent.com/43391630/77871518-62c0c600-7212-11ea-8d5e-66f7492d808b.png)<!-- .element height="50%" width="50%" -->
 
