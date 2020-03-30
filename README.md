@@ -89,9 +89,10 @@ gsutil mb -p $PROJECT_ID -b on gs://$EXPORT_BUCKET_NAME/
 On **MAIN.PY** copy and paste the content from `InputToOutput.py`.<br>
 **REQUIREMENTS.TXT** should look like this:<br>
 ```bash
-requirements.txt
-goocle-cloud-storage
+# Function dependencies, for example:
+# package>=version
 google-cloud-language
+google-cloud-storage
 ```
 
 3) Once the function has been deployed we could test it by uploading a file into the `input_serverless` bucket.<br>
