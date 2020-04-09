@@ -4,9 +4,9 @@
 This is a tutorial of how to use Google Cloud Services to develop a Serverless Data Engineering Pipeline.<br> You can see a video demostration [here](https://youtu.be/4PwVkW0_wB8).
 
 **Previous projects**<br>
-[Submitting a ML and Descriptive analysis to a Spark cluster on GCP](https://github.com/joaquinmenendez/Cloud_Computing_Project_3)<br>
-[Docker containerization](https://github.com/joaquinmenendez/Cloud_Computing_Project_2)<br>
-[Continuous Delivery of Flask Application on GCP](https://github.com/joaquinmenendez/Cloud_Computing_Project_1)<br>
+- [Submitting a ML and Descriptive analysis to a Spark cluster on GCP](https://github.com/joaquinmenendez/Cloud_Computing_Project_3)<br>
+- [Docker containerization](https://github.com/joaquinmenendez/Cloud_Computing_Project_2)<br>
+- [Continuous Delivery of Flask Application on GCP](https://github.com/joaquinmenendez/Cloud_Computing_Project_1)<br>
 
 
 ### General steps
